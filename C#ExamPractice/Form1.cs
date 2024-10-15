@@ -44,6 +44,9 @@ namespace C_ExamPractice
             {
                 timer1.Enabled = false;
                 MessageBox.Show("Times Up");
+            } else if (seconds == 15/2)
+            {
+                MessageBox.Show("Halfway There!");
             }
         }
 
