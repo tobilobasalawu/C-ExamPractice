@@ -43,6 +43,7 @@ namespace C_ExamPractice
             if (seconds == 15)
             {
                 timer1.Enabled = false;
+                MessageBox.Show("Times Up");
             }
         }
 
