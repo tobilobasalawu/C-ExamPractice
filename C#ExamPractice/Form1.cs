@@ -17,6 +17,8 @@ namespace C_ExamPractice
             InitializeComponent();
         }
 
+        int seconds = 0;
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -24,12 +26,24 @@ namespace C_ExamPractice
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            timer1.Enabled = true;
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
+            
+        }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Enabled = true;
+            seconds++;
+            label1.Text = seconds.ToString();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = false;
         }
     }
 }
