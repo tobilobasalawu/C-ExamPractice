@@ -44,6 +44,7 @@ namespace C_ExamPractice
         private void button2_Click(object sender, EventArgs e)
         {
             timer1.Enabled = false;
+            MessageBox.Show($"Elasped time: {seconds}");
         }
     }
 }
