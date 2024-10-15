@@ -55,5 +55,32 @@ namespace C_ExamPractice
             timer1.Enabled = false;
             MessageBox.Show($"Elasped time: {seconds}");
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            seconds++;
+            if (seconds == 10)
+            {
+                timer2.Enabled = false;
+            }
+
+            label4.Text = seconds.ToString();
+;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            timer2.Enabled = true;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            timer2.Enabled = false;
+        }
     }
 }
