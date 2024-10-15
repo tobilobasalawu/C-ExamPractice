@@ -58,7 +58,7 @@ namespace C_ExamPractice
 
         private void label4_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void timer2_Tick(object sender, EventArgs e)
@@ -66,7 +66,13 @@ namespace C_ExamPractice
             seconds++;
             if (seconds == 10)
             {
+                this.BackColor = Color.White;
                 timer2.Enabled = false;
+            } else if (seconds % 3 == 0)
+            {
+                this.BackColor = Color.AliceBlue;
+            } else{
+                this.BackColor = Color.White;
             }
 
             label4.Text = seconds.ToString();
