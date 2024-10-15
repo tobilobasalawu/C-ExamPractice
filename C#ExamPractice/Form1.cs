@@ -18,6 +18,7 @@ namespace C_ExamPractice
         }
 
         int seconds = 0;
+        bool clicked = true;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -64,18 +65,20 @@ namespace C_ExamPractice
         private void timer2_Tick(object sender, EventArgs e)
         {
             seconds++;
+            label4.Text = seconds.ToString();
+
             if (seconds == 10)
             {
                 this.BackColor = Color.White;
                 timer2.Enabled = false;
+                label4.Text = "10 seconds, Timer Stopped";
+
             } else if (seconds % 3 == 0)
             {
                 this.BackColor = Color.AliceBlue;
             } else{
                 this.BackColor = Color.White;
             }
-
-            label4.Text = seconds.ToString();
 ;
         }
 
