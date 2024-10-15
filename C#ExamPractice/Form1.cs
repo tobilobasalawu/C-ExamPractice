@@ -39,6 +39,11 @@ namespace C_ExamPractice
             timer1.Enabled = true;
             seconds++;
             label1.Text = seconds.ToString();
+
+            if (seconds == 15)
+            {
+                timer1.Enabled = false;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
