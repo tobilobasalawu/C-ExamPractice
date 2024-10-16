@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,7 +18,6 @@ namespace C_ExamPractice
         }
 
         int seconds = 0;
-        bool clicked = true;
 
         private void Form1_Load(object sender, EventArgs e)
         {
