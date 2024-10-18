@@ -19,7 +19,10 @@ namespace Question4C_Exam_Practice
 
         int seconds = 0;
         int[] gameArray = { };
+        Random randomWindow = new Random();
         int points = 0;
+        int bonusStart = 0; // Will store the time when the bonus round starts
+        bool inBonusRound = false;
 
 
         private void button1_Click(object sender, EventArgs e)
@@ -45,6 +48,9 @@ namespace Question4C_Exam_Practice
             gameArray.Append(points);
             label2.Text = points.ToString();
             label3.Text = "";
+            int windowRan = randomWindow.Next(10, 25);
+            button2.Enabled = false;
+
 
             if (seconds == 30)
             {
@@ -58,6 +64,21 @@ namespace Question4C_Exam_Practice
                 points -= 3; 
             }
 
+            if (seconds == windowRan && !inBonusRound)
+            {
+                inBonusRound = true;
+                bonusStart = seconds;
+                button2.Enabled = true; // Enable the bonus button
+                points += 5;
+                MessageBox.Show("Bonus round started! Click the bonus button to earn extra points!");
+            }
+
+            if (inBonusRound && seconds == bonusStart + 3)
+            {
+                inBonusRound = false;
+                button2.Enabled = false; // Disable the bonus button
+                MessageBox.Show("Bonus round ended.");
+            }
 
         }
 
@@ -74,6 +95,11 @@ namespace Question4C_Exam_Practice
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }
