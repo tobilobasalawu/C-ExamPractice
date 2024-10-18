@@ -17,8 +17,8 @@ namespace Q4_ExamPractice
             InitializeComponent();
         }
 
-        int [] objectArray = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
-        int seconds = 0;
+        int [] objectArray = { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
         int i = 0;
 
         private void Form1_Load(object sender, EventArgs e)
@@ -33,13 +33,20 @@ namespace Q4_ExamPractice
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            seconds++;
-            i++;
-            progressBar1.Maximum = objectArray.Length;
-            if (seconds < objectArray.Length && i < objectArray.Length)
+            if (i < objectArray.Length - 1)
             {
-                label1.Text = seconds.ToString();
-                progressBar1.Value = objectArray[i];
+                objectArray[i] = 0;
+                i++;
+                objectArray[i] = 1;
+
+                label1.Text = "The position is " + i;
+                progressBar1.Value = i;
+
+            }
+
+            else
+            {
+                timer1.Enabled = false;
             }
 
 
